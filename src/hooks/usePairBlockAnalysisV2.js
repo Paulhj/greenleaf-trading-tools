@@ -1,7 +1,8 @@
 //import { useQuery } from "react-query";
-import { apigreenleaf } from "../api";
-import { useReportParams } from "./useReportParams";
+//import { apigreenleaf } from "../api";
+//import { useReportParams } from "./useReportParams";
 
+/*
 const getPostById = async (params) => {
   const options = {
     method: "get",
@@ -27,9 +28,10 @@ const getPostById = async (params) => {
   const { data } = await apigreenleaf(options).then();
   return data;
 };
+*/
 
 export default function usePairBlockAnalysisV2(pairBlockId) {
-  const [state] = useReportParams();
-  const params = { pairBlockId: pairBlockId, ...state };
+  //const [state] = useReportParams();
+  //const params = { pairBlockId: pairBlockId, ...state };
   return null; //useQuery(["get", params], () => getPostById(params));
 }
