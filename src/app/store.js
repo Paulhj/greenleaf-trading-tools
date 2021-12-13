@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { pairTradeBlocksApi } from "./services/pairTradeBlocks";
 import { pairTradeBlockAnalysisApi } from "./services/pairTradeBlockAnalysis";
+import { sectorsApi } from "./services/sectors";
 import authSlice from "../components/auth/authSlice";
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
     // Add the generated reducer as a specific top-level slice
     [pairTradeBlocksApi.reducerPath]: pairTradeBlocksApi.reducer,
     [pairTradeBlockAnalysisApi.reducerPath]: pairTradeBlockAnalysisApi.reducer,
+    [sectorsApi.reducerPath]: sectorsApi.reducer,
     authSlice,
   },
   // Adding the api middleware enables caching, invalidation, polling,
@@ -17,7 +19,8 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
       .concat(pairTradeBlocksApi.middleware)
-      .concat(pairTradeBlockAnalysisApi.middleware),
+      .concat(pairTradeBlockAnalysisApi.middleware)
+      .concat(sectorsApi.middleware),
 });
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors
