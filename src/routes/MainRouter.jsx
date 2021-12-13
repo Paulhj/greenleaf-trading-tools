@@ -14,7 +14,7 @@ import PairAnalysisParams from "../components/pairAnalysis/PairAnalysisParams";
 import PairAnalysisReport from "../components/pairAnalysis/PairAnalysisReport";
 import PairBlockReport from "../components/pairBlocks/PairBlockReport";
 import PairTradeBlocks from "../components/pairTradeBlocks/PairTradeBlocks";
-import SectorsTable from "../components/sector/SectorTable";
+import Sectors from "../components/sector/Sectors";
 import TickerDetailsComponent from "../components/TickerDetails/TickerDetailsComponent";
 import {
   ReportParamsProvider,
@@ -47,7 +47,7 @@ const MainRouter = () => {
         <ReportParamsProvider>
           <Switch>
             <Route exact path="/">
-              <SectorsTable />
+              <Sectors />
             </Route>
             <Route path="/corrMatrixReport/:sectorId">
               <PairAnalysisParams />

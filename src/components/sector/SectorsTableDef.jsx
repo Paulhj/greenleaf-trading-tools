@@ -1,7 +1,7 @@
 import { useTable } from "react-table";
 import { Link } from "react-router-dom";
 
-const SectorTableDef = ({ columns, data, stdDev }) => {
+const SectorsTableDef = ({ columns, data, stdDev }) => {
   // Use the state and functions returned from useTable to build your UI
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({
@@ -54,4 +54,4 @@ const SectorTableDef = ({ columns, data, stdDev }) => {
   );
 };
 
-export default SectorTableDef;
+export default SectorsTableDef;
