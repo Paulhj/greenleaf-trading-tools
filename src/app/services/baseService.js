@@ -1,7 +1,7 @@
 import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-//export const BASE_URL = "https://pairtradingapi.azurewebsites.net/api/";
-export const BASE_URL = "https://localhost:44372/api/";
+export const BASE_URL = "https://pairtradingapi.azurewebsites.net/api/";
+//export const BASE_URL = "https://localhost:44372/api/";
 
 export const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
