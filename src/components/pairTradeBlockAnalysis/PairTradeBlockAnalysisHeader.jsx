@@ -9,6 +9,10 @@ const PairTradeBlockAnalysisHeader = ({ data }) => {
         Header: "Pair Trade Block Anaysis Details",
         columns: [
           {
+            Header: "Status",
+            accessor: "status",
+          },
+          {
             Header: "Run Time",
             accessor: "analysisRunDt",
           },

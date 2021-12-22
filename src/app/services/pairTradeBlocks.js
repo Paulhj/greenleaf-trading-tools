@@ -18,6 +18,14 @@ export const pairTradeBlocksApi = createApi({
       }),
       invalidatesTags: ["PairTradeBlockList"],
     }),
+    updatePairTradeBlock: builder.mutation({
+      query: (body) => ({
+        url: `pairtradeblock`,
+        method: "PUT",
+        body,
+      }),
+      invalidatesTags: ["PairTradeBlockList"],
+    }),
     deletePairTradeBlock: builder.mutation({
       query: (id) => ({
         url: `pairtradeblock/${id}`,
@@ -48,6 +56,7 @@ export const {
   useLoginMutation,
   useAddPairTradeBlockMutation,
   useDeletePairTradeBlockMutation,
+  useUpdatePairTradeBlockMutation,
 } = pairTradeBlocksApi;
 
 export const {

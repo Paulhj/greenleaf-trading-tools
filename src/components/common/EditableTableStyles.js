@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BasicTableStyles = styled.div`
+export const EditableTableStyles = styled.div`
   padding: 1rem;
 
   table {
