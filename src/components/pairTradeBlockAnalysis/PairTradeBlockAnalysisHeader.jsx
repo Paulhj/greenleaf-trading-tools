@@ -17,6 +17,10 @@ const PairTradeBlockAnalysisHeader = ({ data }) => {
             accessor: "analysisRunDt",
           },
           {
+            Header: "Completed",
+            accessor: "analysisCompletedDt",
+          },
+          {
             Header: "Std. Open",
             accessor: "stdDevToOpenTrade",
           },
