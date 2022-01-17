@@ -1,26 +1,38 @@
 import React from "react";
 import { BasicTableStyles } from "../common/BasicTableStyles";
-import Table from "../common/Table";
+import TickersTableDef from "./TickersTableDef";
 
-const TickersTable = ({ data, sectorName }) => {
+const TickersTable = ({ data }) => {
   const columns = React.useMemo(
     () => [
       {
-        Header: `${sectorName} Tickers`,
+        Header: `Sector Tickers`,
         columns: [
           {
-            Header: "Name",
+            Header: "Sector Name",
+            accessor: "sectorName",
+          },
+          {
+            Header: "Ticker",
             accessor: "name",
+          },
+          {
+            Header: "Exclude From Trading",
+            accessor: "excludeFromTrading",
+          },
+          {
+            Header: "Id",
+            accessor: "id",
           },
         ],
       },
     ],
-    [sectorName]
+    []
   );
 
   return (
     <BasicTableStyles>
-      <Table columns={columns} data={data} />
+      <TickersTableDef columns={columns} data={data} />
     </BasicTableStyles>
   );
 };

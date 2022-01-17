@@ -20,6 +20,10 @@ const SectorsTable = ({ data }) => {
             Header: "Symbols",
             accessor: "tickerCount",
           },
+          {
+            Header: "View",
+            accessor: "id",
+          },
         ],
       },
     ],
