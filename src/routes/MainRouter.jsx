@@ -15,6 +15,8 @@ import PairAnalysisReport from "../components/pairAnalysis/PairAnalysisReport";
 import PairBlockReport from "../components/pairBlocks/PairBlockReport";
 import PairTradeBlocks from "../components/pairTradeBlocks/PairTradeBlocks";
 import Sectors from "../components/sector/Sectors";
+import SectorTickers from "../components/tickers/SectorTickers";
+import Tickers from "../components/tickers/Tickers";
 import TickerDetailsComponent from "../components/TickerDetails/TickerDetailsComponent";
 import {
   ReportParamsProvider,
@@ -39,6 +41,9 @@ const MainRouter = () => {
             <Link to="/">Sectors</Link>
           </li>
           <li>
+            <Link to="/tickers">All Tickers</Link>
+          </li>
+          <li>
             <Link to="/pairtradeblocks">Pair Trade Blocks</Link>
           </li>
         </ul>
@@ -48,6 +53,12 @@ const MainRouter = () => {
           <Switch>
             <Route exact path="/">
               <Sectors />
+            </Route>
+            <Route exact path="/tickers/:sectorId">
+              <SectorTickersWrapper />
+            </Route>
+            <Route exact path="/tickers/">
+              <Tickers />
             </Route>
             <Route path="/corrMatrixReport/:sectorId">
               <PairAnalysisParams />
@@ -97,6 +108,11 @@ function CorrMatrixReportWrapper() {
 
 function TickerDetailsComponentWrapper() {
   return <TickerDetailsComponent />;
+}
+
+function SectorTickersWrapper() {
+  let { sectorId } = useParams();
+  return <SectorTickers sectorId={sectorId} />;
 }
 
 function PairAnalysisReportWrapper() {

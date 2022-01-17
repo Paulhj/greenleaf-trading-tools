@@ -6,7 +6,7 @@ const SectorTickers = ({ sectorId }) => {
     useGetTickersBySectorIdQuery(sectorId);
 
   if (isLoading) {
-    return <div>Loading Sectors...</div>;
+    return <div>Loading Tickers...</div>;
   } else if (isError) {
     return (
       <div>
