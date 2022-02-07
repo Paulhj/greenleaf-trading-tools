@@ -15,7 +15,6 @@ const TradesExpandableTable = ({
     rows,
     prepareRow,
     visibleColumns,
-    state: { expanded },
   } = useTable(
     {
       columns: userColumns,
