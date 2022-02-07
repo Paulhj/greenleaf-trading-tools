@@ -5,6 +5,7 @@ import { pairTradeBlocksApi } from "./services/pairTradeBlocks";
 import { pairTradeBlockAnalysisApi } from "./services/pairTradeBlockAnalysis";
 import { sectorsApi } from "./services/sectors";
 import { tickersApi } from "./services/tickers";
+import { tradesApi } from "./services/trades";
 import authSlice from "../components/auth/authSlice";
 
 export const store = configureStore({
@@ -14,6 +15,7 @@ export const store = configureStore({
     [pairTradeBlockAnalysisApi.reducerPath]: pairTradeBlockAnalysisApi.reducer,
     [sectorsApi.reducerPath]: sectorsApi.reducer,
     [tickersApi.reducerPath]: tickersApi.reducer,
+    [tradesApi.reducerPath]: tradesApi.reducer,
     authSlice,
   },
   // Adding the api middleware enables caching, invalidation, polling,
@@ -23,7 +25,8 @@ export const store = configureStore({
       .concat(pairTradeBlocksApi.middleware)
       .concat(pairTradeBlockAnalysisApi.middleware)
       .concat(sectorsApi.middleware)
-      .concat(tickersApi.middleware),
+      .concat(tickersApi.middleware)
+      .concat(tradesApi.middleware),
 });
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors
