@@ -25,6 +25,7 @@ import {
 import { selectIsAuthenticated } from "../components/auth/authSlice";
 import Login from "../components/auth/Login";
 import PairTradeBlockAnalysis from "../components/pairTradeBlockAnalysis/PairTradeBlockAnalysis";
+import Trades from "../components/trades/Trades";
 
 const MainRouter = () => {
   const isAuthenticated = useSelector(selectIsAuthenticated);
@@ -46,6 +47,9 @@ const MainRouter = () => {
           <li>
             <Link to="/pairtradeblocks">Pair Trade Blocks</Link>
           </li>
+          <li>
+            <Link to="/trades">All Trades</Link>
+          </li>
         </ul>
         <hr />
 
@@ -59,6 +63,9 @@ const MainRouter = () => {
             </Route>
             <Route exact path="/tickers/">
               <Tickers />
+            </Route>
+            <Route exact path="/trades/">
+              <Trades />
             </Route>
             <Route path="/corrMatrixReport/:sectorId">
               <PairAnalysisParams />
