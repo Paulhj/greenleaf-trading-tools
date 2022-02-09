@@ -68,16 +68,20 @@ const TradesTable = ({ data }) => {
             accessor: "s1Shares",
           },
           {
-            Header: "S1 Type",
-            accessor: "s1OrderType",
-          },
-          {
             Header: "S2 Shares",
             accessor: "s2Shares",
           },
           {
+            Header: "S1 Type",
+            accessor: "s1OrderType",
+          },
+          {
             Header: "S2 Type",
             accessor: "s2OrderType",
+          },
+          {
+            Header: "Type",
+            accessor: "tradeTypeDisplay",
           },
           {
             Header: "P/L T1",
