@@ -10,9 +10,16 @@ export const tradesApi = createApi({
       query: () => ({ url: `trades` }),
       providesTags: ["TradeList"],
     }),
+    getTradesByDateRange: builder.query({
+      query: (filterDateRange) => ({
+        url: `trades`,
+        params: filterDateRange,
+      }),
+      providesTags: ["TradeList"],
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetAllTradesQuery } = tradesApi;
+export const { useGetAllTradesQuery, useGetTradesByDateRangeQuery } = tradesApi;

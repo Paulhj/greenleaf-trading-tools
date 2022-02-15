@@ -124,6 +124,10 @@ const TradesTable = ({ data }) => {
     []
   );
 
+  if (data === null) {
+    return <div>No results found for specified filter range...</div>;
+  }
+
   return (
     <BasicTableStyles>
       <TradesExpandableTable
