@@ -1,8 +1,30 @@
-import { useGetAllTradesQuery } from "../../app/services/trades";
+import React, { useState } from "react";
+import { useGetTradesByDateRangeQuery } from "../../app/services/trades";
+import TradesParams from "./TradesParams";
 import TradesTable from "./TradesTable";
+import TradesSummaryTable from "./TradesSummaryTable";
 
 const Trades = () => {
-  const { data, error, isError, isLoading, refetch } = useGetAllTradesQuery();
+  function getCurrentDate(separator = "-") {
+    let newDate = new Date();
+    let date = newDate.getDate();
+    let month = newDate.getMonth() + 1;
+    let year = newDate.getFullYear();
+
+    return `${year}${separator}${
+      month < 10 ? `0${month}` : `${month}`
+    }${separator}${date}`;
+  }
+
+  const defaultFilter = {
+    beginDate: getCurrentDate(),
+    endDate: getCurrentDate(),
+  };
+
+  const [inputs, setInputs] = useState(defaultFilter);
+
+  const { data, error, isError, isLoading, refetch } =
+    useGetTradesByDateRangeQuery(inputs);
 
   if (isLoading) {
     return <div>Loading Trades...</div>;
@@ -19,8 +41,11 @@ const Trades = () => {
           fontSize: "12px",
         }}
       >
+        <TradesParams inputs={inputs} setInputs={setInputs} />
+        <hr />
         <button onClick={() => refetch()}>Refresh Table</button>
-        <TradesTable data={data.data} />
+        <TradesSummaryTable data={data.data} />
+        <TradesTable data={data.data.trades} />
       </pre>
     );
   }
