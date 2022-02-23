@@ -26,6 +26,7 @@ import { selectIsAuthenticated } from "../components/auth/authSlice";
 import Login from "../components/auth/Login";
 import PairTradeBlockAnalysis from "../components/pairTradeBlockAnalysis/PairTradeBlockAnalysis";
 import Trades from "../components/trades/Trades";
+import "./mainrouter.css";
 
 const MainRouter = () => {
   const isAuthenticated = useSelector(selectIsAuthenticated);
@@ -36,8 +37,8 @@ const MainRouter = () => {
 
   return (
     <Router>
-      <div>
-        <ul>
+      <div className="div_top_hypers">
+        <ul className="ul_top_hypers">
           <li>
             <Link to="/">Sectors</Link>
           </li>

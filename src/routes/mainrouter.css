@@ -1,0 +1,9 @@
+.div_top_hypers {
+  background-color: #eeeeee;
+  display: inline;
+}
+
+.ul_top_hypers li {
+  display: inline;
+  padding-right: 15px;
+}

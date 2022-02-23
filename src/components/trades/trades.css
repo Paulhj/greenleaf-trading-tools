@@ -1,0 +1,9 @@
+.rowC {
+  display: flex;
+  flex-direction: row;
+}
+
+.tradeparams {
+  border-right: 1;
+  padding-right: 20px;
+}
