@@ -23,12 +23,18 @@ const PairAnalysisReport = ({ ticker1, ticker2, pairTradeBlockId }) => {
     stdDevToStopLoss: state.stdDevToStopLoss,
   };
 
-  const { data, isLoading } = useGetPairAnalysisQuery(params);
+  const { data, error, isError, isLoading } = useGetPairAnalysisQuery(params);
 
   if (isLoading) {
     return (
       <div>
         Loading pair analysis for {ticker1} abd {ticker2} ...
+      </div>
+    );
+  } else if (isError) {
+    return (
+      <div>
+        Error Status: {error.status} Msg: {error.data.error.message}
       </div>
     );
   } else if (data !== undefined) {

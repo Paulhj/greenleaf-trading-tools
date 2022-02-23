@@ -1,5 +1,6 @@
 import React from "react";
 import { useTable, useExpanded } from "react-table";
+import { Link } from "react-router-dom";
 // A simple way to support a renderRowSubComponent is to make a render prop
 // This is NOT part of the React Table API, it's merely a rendering
 // option we are creating for ourselves in our table renderer
@@ -50,6 +51,17 @@ const TradesExpandableTable = ({
               <React.Fragment {...row.getRowProps()}>
                 <tr>
                   {row.cells.map((cell) => {
+                    if (cell.column.Header === "PA-Details") {
+                      const s1 = row.cells[1].value;
+                      const s2 = row.cells[2].value;
+                      const url = `/pairanalysisreport/${s1}/${s2}`;
+                      return (
+                        <td {...cell.getCellProps()}>
+                          <Link to={url}>Pair Analysis</Link>
+                        </td>
+                      );
+                    }
+
                     return (
                       <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                     );

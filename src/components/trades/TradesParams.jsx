@@ -16,7 +16,7 @@ const TradesParams = ({ inputs, setInputs }) => {
         border: "1px solid black",
       }}
     >
-      <b>Filter Parameters</b>
+      <b>Trades Filter Parameters</b>
       <div>
         <label htmlFor="beginDate-input">Filter Begin Date: </label>
         <input

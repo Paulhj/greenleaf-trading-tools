@@ -3,8 +3,9 @@ import { BasicTableStyles } from "../common/BasicTableStyles";
 import OrdersTable from "./OrdersTable";
 import TradeDetailsTable from "./TradeDetailsTable";
 import TradesExpandableTable from "./TradesExpandableTable";
+import TradeAnalysis from "./TradeAnalysis";
 
-const TradesTable = ({ data }) => {
+const TradesTable = ({ data, analysisInputs }) => {
   const columns = React.useMemo(
     () => [
       {
@@ -119,9 +120,14 @@ const TradesTable = ({ data }) => {
           ]}
         />
         <OrdersTable data={row.original.orders} />
+        <TradeAnalysis
+          analysisInputs={analysisInputs}
+          s1={row.original.s1}
+          s2={row.original.s2}
+        />
       </pre>
     ),
-    []
+    [analysisInputs]
   );
 
   if (data === null) {
