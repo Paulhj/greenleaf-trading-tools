@@ -2,6 +2,7 @@ import { useGetPairAnalysisQuery } from "../../app/services/pairTradeBlockAnalys
 import PairAnalysisDetails from "../pairAnalysis/PairAnalysisDetails";
 import PairsAnalysisChart from "../pairAnalysis/PairAnalysisChart";
 import PairAnalysisTable from "../pairAnalysis/PairAnalysisTable";
+import PairDayDataTable from "./PairDayDataTable";
 
 const TradeAnalysis = ({ s1, s2, analysisInputs }) => {
   const params = {
@@ -43,6 +44,7 @@ const TradeAnalysis = ({ s1, s2, analysisInputs }) => {
           data={data.minuteCloseData}
         />
         <PairAnalysisTable minuteCloseData={data.minuteCloseData} />
+        <PairDayDataTable data={data.dayCloseData} />
       </div>
     );
   }
