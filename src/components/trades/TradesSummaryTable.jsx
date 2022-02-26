@@ -17,6 +17,10 @@ const TradesSummaryTable = ({ data }) => {
             accessor: "totalNumTrades",
           },
           {
+            Header: "# Active",
+            accessor: "totalTradesActive",
+          },
+          {
             Header: "# Closes",
             accessor: "totalTradesClosed",
           },
