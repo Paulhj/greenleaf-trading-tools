@@ -25,6 +25,10 @@ const TradesTable = ({ data, analysisInputs }) => {
         Header: "Trades",
         columns: [
           {
+            Header: "Type",
+            accessor: "tradeTypeDisplay",
+          },
+          {
             Header: "S1",
             accessor: "s1",
           },
@@ -79,10 +83,6 @@ const TradesTable = ({ data, analysisInputs }) => {
           {
             Header: "S2 Type",
             accessor: "s2OrderType",
-          },
-          {
-            Header: "Type",
-            accessor: "tradeTypeDisplay",
           },
           {
             Header: "P/L T1",

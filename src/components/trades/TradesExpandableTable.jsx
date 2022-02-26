@@ -62,6 +62,66 @@ const TradesExpandableTable = ({
                       );
                     }
 
+                    if (
+                      cell.column.Header === "Type" &&
+                      (cell.value === "ACTIVE_SL" || cell.value === "ACTIVE_LS")
+                    ) {
+                      return (
+                        <td bgcolor="#667799" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (
+                      cell.column.Header === "Type" &&
+                      cell.value === "STOP_LOSS"
+                    ) {
+                      return (
+                        <td bgcolor="#dd7788" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (
+                      cell.column.Header === "Type" &&
+                      cell.value === "CLOSE"
+                    ) {
+                      return (
+                        <td bgcolor="#7a9460" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (
+                      cell.column.Header === "Type" &&
+                      cell.value === "END_OF_DAY"
+                    ) {
+                      return (
+                        <td bgcolor="#f2e090" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (cell.column.Header === "P/L" && cell.value >= 0) {
+                      return (
+                        <td bgcolor="#7a9460" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (cell.column.Header === "P/L" && cell.value < 0) {
+                      return (
+                        <td bgcolor="#dd7788" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
                     return (
                       <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                     );
@@ -91,7 +151,7 @@ const TradesExpandableTable = ({
         </tbody>
       </table>
       <br />
-      <div>Showing the first 20 results of {rows.length} rows</div>
+      <div>Showing {rows.length} rows</div>
     </>
   );
 };
