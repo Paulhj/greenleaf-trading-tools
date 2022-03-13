@@ -4,6 +4,7 @@ import TradesParams from "./TradesParams";
 import TradesTable from "./TradesTable";
 import TradesSummaryTable from "./TradesSummaryTable";
 import AnalysisParams from "./AnalysisParams";
+import TradeAnalysisChart from "./TradeAnalysisChart";
 import "./trades.css";
 
 const Trades = () => {
@@ -39,7 +40,7 @@ const Trades = () => {
 
   const { data, error, isError, isLoading, refetch } =
     useGetTradesByDateRangeQuery(inputs, {
-      pollingInterval: 5000, // 5000 ms
+      pollingInterval: 50000, // 50000 ms
     });
 
   if (isLoading) {

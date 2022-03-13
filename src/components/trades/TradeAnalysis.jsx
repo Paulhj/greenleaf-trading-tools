@@ -3,8 +3,9 @@ import PairAnalysisDetails from "../pairAnalysis/PairAnalysisDetails";
 import PairsAnalysisChart from "../pairAnalysis/PairAnalysisChart";
 import PairAnalysisTable from "../pairAnalysis/PairAnalysisTable";
 import PairDayDataTable from "./PairDayDataTable";
+import TradeAnalysisChart from "./TradeAnalysisChart";
 
-const TradeAnalysis = ({ s1, s2, analysisInputs }) => {
+const TradeAnalysis = ({ s1, s2, analysisInputs, tradeId }) => {
   const params = {
     ticker1: s1,
     ticker2: s2,
@@ -16,6 +17,7 @@ const TradeAnalysis = ({ s1, s2, analysisInputs }) => {
     stdDevToOpenTrade: analysisInputs.stdDevToOpenTrade,
     stdDevToCloseTrade: analysisInputs.stdDevToCloseTrade,
     stdDevToStopLoss: analysisInputs.stdDevToStopLoss,
+    tradeId: tradeId,
   };
 
   const { data, error, isError, isLoading } = useGetPairAnalysisQuery(params);
@@ -41,6 +43,11 @@ const TradeAnalysis = ({ s1, s2, analysisInputs }) => {
           ticker2={data.ticker2}
           spreadMean={data.spreadAverage}
           stdDev={data.stdDev}
+          data={data.minuteCloseData}
+        />
+        <TradeAnalysisChart
+          ticker1={data.ticker1}
+          ticker2={data.ticker2}
           data={data.minuteCloseData}
         />
         <PairAnalysisTable minuteCloseData={data.minuteCloseData} />

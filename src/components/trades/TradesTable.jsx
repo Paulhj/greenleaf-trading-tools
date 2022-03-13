@@ -124,6 +124,7 @@ const TradesTable = ({ data, analysisInputs }) => {
           analysisInputs={analysisInputs}
           s1={row.original.s1}
           s2={row.original.s2}
+          tradeId={row.original.id}
         />
       </pre>
     ),

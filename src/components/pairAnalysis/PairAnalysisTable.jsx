@@ -48,6 +48,18 @@ const PairAnalysisTable = ({ minuteCloseData }) => {
             Header: "A. Std Dev",
             accessor: "actualStdDev",
           },
+          {
+            Header: "Profit/Loss S1",
+            accessor: "profitLossT1",
+          },
+          {
+            Header: "Profit/Loss S2",
+            accessor: "profitLossT2",
+          },
+          {
+            Header: "Profit/Loss",
+            accessor: "profitLoss",
+          },
         ],
       },
     ],
