@@ -4,7 +4,7 @@ import TradesParams from "./TradesParams";
 import TradesTable from "./TradesTable";
 import TradesSummaryTable from "./TradesSummaryTable";
 import AnalysisParams from "./AnalysisParams";
-import TradeAnalysisChart from "./TradeAnalysisChart";
+//import TradeAnalysisChart from "./TradeAnalysisChart";
 import "./trades.css";
 
 const Trades = () => {
