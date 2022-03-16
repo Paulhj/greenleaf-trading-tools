@@ -2,6 +2,14 @@ import React from "react";
 import Table from "../common/Table";
 import { BasicTableStyles } from "../common/BasicTableStyles";
 
+const shapeData = (data) => {
+  return {
+    ...data,
+    alpacaProfitLoss: data.brokerage.profitLoss,
+    time: data.brokerage.timeDisplay,
+  };
+};
+
 const TradesSummaryTable = ({ data }) => {
   const columns = React.useMemo(
     () => [
@@ -32,6 +40,14 @@ const TradesSummaryTable = ({ data }) => {
             Header: "# End Of Day",
             accessor: "totalTradesEndOfDay",
           },
+          {
+            Header: "Alpaca Profit/Loss",
+            accessor: "alpacaProfitLoss",
+          },
+          {
+            Header: "Time",
+            accessor: "time",
+          },
         ],
       },
     ],
@@ -40,7 +56,7 @@ const TradesSummaryTable = ({ data }) => {
 
   return (
     <BasicTableStyles>
-      <Table columns={columns} data={[data]} />
+      <Table columns={columns} data={[shapeData(data)]} />
     </BasicTableStyles>
   );
 };
