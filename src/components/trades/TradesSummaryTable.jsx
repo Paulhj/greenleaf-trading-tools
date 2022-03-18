@@ -7,6 +7,9 @@ const shapeData = (data) => {
     ...data,
     alpacaProfitLoss: data.brokerage.profitLoss,
     time: data.brokerage.timeDisplay,
+    equity: data.brokerage.equity,
+    longMarketValue: data.brokerage.longMarketValue,
+    shortMarkeyValue: data.brokerage.shortMarketValue,
   };
 };
 
@@ -41,8 +44,20 @@ const TradesSummaryTable = ({ data }) => {
             accessor: "totalTradesEndOfDay",
           },
           {
-            Header: "Alpaca Profit/Loss",
+            Header: "Alpaca P/L",
             accessor: "alpacaProfitLoss",
+          },
+          {
+            Header: "Alpaca Equity",
+            accessor: "equity",
+          },
+          {
+            Header: "Alpaca Long",
+            accessor: "longMarketValue",
+          },
+          {
+            Header: "Alpaca Short",
+            accessor: "shortMarketValue",
           },
           {
             Header: "Time",
