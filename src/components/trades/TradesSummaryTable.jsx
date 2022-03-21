@@ -9,7 +9,7 @@ const shapeData = (data) => {
     time: data.brokerage.timeDisplay,
     equity: data.brokerage.equity,
     longMarketValue: data.brokerage.longMarketValue,
-    shortMarkeyValue: data.brokerage.shortMarketValue,
+    shortMarketValue: data.brokerage.shortMarketValue,
   };
 };
 

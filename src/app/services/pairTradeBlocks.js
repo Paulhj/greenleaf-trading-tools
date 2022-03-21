@@ -10,6 +10,13 @@ export const pairTradeBlocksApi = createApi({
       query: () => ({ url: "pairtradeblock" }),
       providesTags: ["PairTradeBlockList"],
     }),
+    getPairTradeBlocksByDateRange: builder.query({
+      query: (params) => ({
+        url: "pairtradeblock",
+        params: params,
+      }),
+      providesTags: ["PairTradeBlockList"],
+    }),
     addPairTradeBlock: builder.mutation({
       query: (body) => ({
         url: `CorrMatrixAnalysis`,
@@ -53,6 +60,7 @@ export const pairTradeBlocksApi = createApi({
 // auto-generated based on the defined endpoints
 export const {
   useGetAllPairTradeBlocksQuery,
+  useGetPairTradeBlocksByDateRangeQuery,
   useLoginMutation,
   useAddPairTradeBlockMutation,
   useDeletePairTradeBlockMutation,
