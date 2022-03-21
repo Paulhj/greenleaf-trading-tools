@@ -49,7 +49,8 @@ const PairTradeBlockTable = ({ data }) => {
   if (data === null) {
     return (
       <div>
-        No pair block data found, make sure you are connected to the internet.
+        No pair block data found, make sure you have selected a valid date
+        range.
       </div>
     );
   }
