@@ -11,11 +11,18 @@ const PairTradeBlocks = () => {
 
   const [params, setParams] = useState(defaultParams);
 
-  const { data, error, isError, isLoading, refetch } =
+  const { data, error, isError, isLoading, isFetching, refetch } =
     useGetPairTradeBlocksByDateRangeQuery(params);
 
   if (isLoading) {
     return <div>Loading Pair Trade Blocks...</div>;
+  } else if (isFetching) {
+    return (
+      <div>
+        Refetching Pair Trade Blocks...If you don't want to wait so long select
+        a tighter date range
+      </div>
+    );
   } else if (isError) {
     return (
       <div>
