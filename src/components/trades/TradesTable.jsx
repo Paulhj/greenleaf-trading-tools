@@ -4,8 +4,11 @@ import OrdersTable from "./OrdersTable";
 import TradeDetailsTable from "./TradeDetailsTable";
 import TradesExpandableTable from "./TradesExpandableTable";
 import TradeAnalysis from "./TradeAnalysis";
+import { useUpdateTradeMutation } from "../../app/services/trades";
 
 const TradesTable = ({ data, analysisInputs }) => {
+  const [updateTrade] = useUpdateTradeMutation();
+
   const columns = React.useMemo(
     () => [
       {
@@ -98,8 +101,37 @@ const TradesTable = ({ data, analysisInputs }) => {
           },
         ],
       },
+      {
+        // Make an close button cell
+        Header: () => null, // No header
+        id: "closeBtn", // It needs an ID
+        Cell: ({ row }) => {
+          if (row.original.tradeType === 2 || row.original.tradeType === 3) {
+            return (
+              <button
+                onClick={() => {
+                  if (
+                    // eslint-disable-next-line no-restricted-globals
+                    confirm("Do you want to really close this trade?")
+                  ) {
+                    const data = row.original;
+                    updateTrade({
+                      tradeId: data.id,
+                      tradeType: 8, //PENDING_CLOSE
+                    });
+                  }
+                }}
+              >
+                Close
+              </button>
+            );
+          } else {
+            return <div>NO OP</div>;
+          }
+        },
+      },
     ],
-    []
+    [updateTrade]
   );
 
   const renderRowSubComponent = React.useCallback(

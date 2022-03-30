@@ -106,6 +106,17 @@ const TradesExpandableTable = ({
                       );
                     }
 
+                    if (
+                      cell.column.Header === "Type" &&
+                      cell.value === "CLOSE_MANUAL"
+                    ) {
+                      return (
+                        <td bgcolor="#f2e090" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
                     if (cell.column.Header === "P/L" && cell.value >= 0) {
                       return (
                         <td bgcolor="#7a9460" {...cell.getCellProps()}>
