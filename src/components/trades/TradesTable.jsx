@@ -57,7 +57,7 @@ const TradesTable = ({ data, analysisInputs }) => {
           },
           {
             Header: "O. S1 Price",
-            accessor: "openS1Price",
+            accessor: "openS1HomerAndBrokeragePrice",
           },
           {
             Header: "C. S1 Price",
@@ -65,7 +65,7 @@ const TradesTable = ({ data, analysisInputs }) => {
           },
           {
             Header: "O. S2 Price",
-            accessor: "openS2Price",
+            accessor: "openS2HomerAndBrokeragePrice",
           },
           {
             Header: "C. S2 Price",
