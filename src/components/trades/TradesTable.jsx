@@ -48,56 +48,60 @@ const TradesTable = ({ data, analysisInputs }) => {
             accessor: "closeDate",
           },
           {
-            Header: "O. Std Dev",
+            Header: "O. SD",
             accessor: "openStdDev",
           },
           {
-            Header: "C. Std Dev",
+            Header: "C. SD",
             accessor: "closeStdDev",
           },
           {
-            Header: "O. S1 Price",
+            Header: "O. S1 $",
             accessor: "openS1HomerAndBrokeragePrice",
           },
           {
-            Header: "C. S1 Price",
+            Header: "C. S1 $",
             accessor: "closeS1Price",
           },
           {
-            Header: "O. S2 Price",
+            Header: "O. S2 $",
             accessor: "openS2HomerAndBrokeragePrice",
           },
           {
-            Header: "C. S2 Price",
+            Header: "C. S2 $",
             accessor: "closeS2Price",
           },
           {
-            Header: "S1 Shares",
+            Header: "S1 #",
             accessor: "s1Shares",
           },
           {
-            Header: "S2 Shares",
+            Header: "S2 #",
             accessor: "s2Shares",
           },
           {
-            Header: "S1 Type",
+            Header: "S1 T",
             accessor: "s1OrderType",
           },
           {
-            Header: "S2 Type",
+            Header: "S2 T",
             accessor: "s2OrderType",
           },
           {
             Header: "P/L T1",
-            accessor: "profitLossT1",
+            accessor: "profitLossT1WithSlippage",
           },
           {
             Header: "P/L T2",
-            accessor: "profitLossT2",
+            accessor: "profitLossT2WithSlippage",
           },
           {
             Header: "P/L",
             accessor: "profitLoss",
+          },
+          {
+            Header: "P/L Slip.",
+            accessor: "profitLossSlippage",
           },
         ],
       },
