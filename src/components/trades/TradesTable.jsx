@@ -24,84 +24,186 @@ const TradesTable = ({ data, analysisInputs }) => {
           </span>
         ),
       },
+      // Trades Section
       {
         Header: "Trades",
         columns: [
           {
-            Header: "Type",
-            accessor: "tradeTypeDisplay",
+            Header: "***",
+            columns: [
+              {
+                Header: "Status",
+                accessor: "tradeTypeDisplay",
+              },
+            ],
           },
           {
-            Header: "S1",
-            accessor: "s1",
+            Header: "1st Leg",
+            columns: [
+              {
+                Header: "Sym",
+                accessor: "s1",
+              },
+              {
+                Header: "#",
+                accessor: "s1Shares",
+              },
+              {
+                Header: "Type",
+                accessor: "s1OrderType",
+              },
+            ],
           },
           {
-            Header: "S2",
-            accessor: "s2",
+            Header: "2nd Leg",
+            columns: [
+              {
+                Header: "Sym",
+                accessor: "s2",
+              },
+              {
+                Header: "#",
+                accessor: "s2Shares",
+              },
+              {
+                Header: "Type",
+                accessor: "s2OrderType",
+              },
+            ],
+          },
+        ],
+      },
+      // Pair Trade Open
+      {
+        Header: "Pair Trade Open",
+        columns: [
+          {
+            Header: "Details",
+            columns: [
+              {
+                Header: "Time",
+                accessor: "openDate",
+              },
+              {
+                Header: "S. Dev",
+                accessor: "openStdDev",
+              },
+            ],
           },
           {
-            Header: "Open",
-            accessor: "openDate",
+            Header: "S1 Price",
+            columns: [
+              {
+                Header: "Homer",
+                accessor: "openS1Price",
+              },
+              {
+                Header: "Alpaca",
+                accessor: "openS1BrokeragePrice",
+              },
+            ],
           },
           {
-            Header: "Close",
-            accessor: "closeDate",
+            Header: "S2 Price",
+            columns: [
+              {
+                Header: "Homer",
+                accessor: "openS2Price",
+              },
+              {
+                Header: "Alpaca",
+                accessor: "openS2BrokeragePrice",
+              },
+            ],
+          },
+        ],
+      },
+      // Pair Trade Close
+      {
+        Header: "Pair Trade Close",
+        columns: [
+          {
+            Header: "Details",
+            columns: [
+              {
+                Header: "Time",
+                accessor: "closeDate",
+              },
+              {
+                Header: "S. Dev",
+                accessor: "closeStdDev",
+              },
+            ],
           },
           {
-            Header: "O. SD",
-            accessor: "openStdDev",
+            Header: "S1 Price",
+            columns: [
+              {
+                Header: "Homer",
+                accessor: "closeS1Price",
+              },
+              {
+                Header: "Alpaca",
+                accessor: "closeS1BrokeragePrice",
+              },
+            ],
           },
           {
-            Header: "C. SD",
-            accessor: "closeStdDev",
+            Header: "S2 Price",
+            columns: [
+              {
+                Header: "Homer",
+                accessor: "closeS2Price",
+              },
+              {
+                Header: "Alpaca",
+                accessor: "closeS2BrokeragePrice",
+              },
+            ],
+          },
+        ],
+      },
+      // Profit/Loss Section
+      {
+        Header: "Profit/Loss",
+        columns: [
+          {
+            Header: "Homer",
+            columns: [
+              {
+                Header: "S1 Leg",
+                accessor: "profitLossT1",
+              },
+              {
+                Header: "S2 Leg",
+                accessor: "profitLossT2",
+              },
+              {
+                Header: "Total",
+                accessor: "profitLoss",
+              },
+              {
+                Header: "Slippage",
+                accessor: "profitLossSlippage",
+              },
+            ],
           },
           {
-            Header: "O. S1 $",
-            accessor: "openS1HomerAndBrokeragePrice",
-          },
-          {
-            Header: "C. S1 $",
-            accessor: "closeS1Price",
-          },
-          {
-            Header: "O. S2 $",
-            accessor: "openS2HomerAndBrokeragePrice",
-          },
-          {
-            Header: "C. S2 $",
-            accessor: "closeS2Price",
-          },
-          {
-            Header: "S1 #",
-            accessor: "s1Shares",
-          },
-          {
-            Header: "S2 #",
-            accessor: "s2Shares",
-          },
-          {
-            Header: "S1 T",
-            accessor: "s1OrderType",
-          },
-          {
-            Header: "S2 T",
-            accessor: "s2OrderType",
-          },
-          {
-            Header: "P/L T1",
-            accessor: "profitLossT1WithSlippage",
-          },
-          {
-            Header: "P/L T2",
-            accessor: "profitLossT2WithSlippage",
-          },
-          {
-            Header: "P/L",
-            accessor: "profitLoss",
-          },
-          {
-            Header: "P/L Slip.",
-            accessor: "profitLossSlippage",
+            Header: "Alpaca",
+            columns: [
+              {
+                Header: "S1 Leg",
+                accessor: "brokerageProfitLossT1",
+              },
+              {
+                Header: "S2 Leg",
+                accessor: "brokerageProfitLossT2",
+              },
+              {
+                Header: "Total",
+                accessor: "profitLossBrokerage",
+              },
+            ],
           },
         ],
       },

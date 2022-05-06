@@ -63,7 +63,7 @@ const TradesExpandableTable = ({
                     }
 
                     if (
-                      cell.column.Header === "Type" &&
+                      cell.column.Header === "Status" &&
                       (cell.value === "ACTIVE_SL" || cell.value === "ACTIVE_LS")
                     ) {
                       return (
@@ -74,7 +74,7 @@ const TradesExpandableTable = ({
                     }
 
                     if (
-                      cell.column.Header === "Type" &&
+                      cell.column.Header === "Status" &&
                       cell.value === "STOP_LOSS"
                     ) {
                       return (
@@ -85,7 +85,7 @@ const TradesExpandableTable = ({
                     }
 
                     if (
-                      cell.column.Header === "Type" &&
+                      cell.column.Header === "Status" &&
                       cell.value === "CLOSE"
                     ) {
                       return (
@@ -96,7 +96,7 @@ const TradesExpandableTable = ({
                     }
 
                     if (
-                      cell.column.Header === "Type" &&
+                      cell.column.Header === "Status" &&
                       cell.value === "END_OF_DAY"
                     ) {
                       return (
@@ -107,7 +107,7 @@ const TradesExpandableTable = ({
                     }
 
                     if (
-                      cell.column.Header === "Type" &&
+                      cell.column.Header === "Status" &&
                       cell.value === "CLOSE_MANUAL"
                     ) {
                       return (
@@ -117,7 +117,7 @@ const TradesExpandableTable = ({
                       );
                     }
 
-                    if (cell.column.Header === "P/L" && cell.value >= 0) {
+                    if (cell.column.Header === "Total" && cell.value >= 0) {
                       return (
                         <td bgcolor="#7a9460" {...cell.getCellProps()}>
                           {cell.render("Cell")}
@@ -125,7 +125,7 @@ const TradesExpandableTable = ({
                       );
                     }
 
-                    if (cell.column.Header === "P/L" && cell.value < 0) {
+                    if (cell.column.Header === "Total" && cell.value < 0) {
                       return (
                         <td bgcolor="#dd7788" {...cell.getCellProps()}>
                           {cell.render("Cell")}
