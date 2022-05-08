@@ -1,6 +1,5 @@
 import React from "react";
 import { useTable, useExpanded } from "react-table";
-import { Link } from "react-router-dom";
 // A simple way to support a renderRowSubComponent is to make a render prop
 // This is NOT part of the React Table API, it's merely a rendering
 // option we are creating for ourselves in our table renderer
