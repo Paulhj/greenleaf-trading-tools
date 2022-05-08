@@ -24,6 +24,11 @@ const TradesSummaryTable = ({ data }) => {
             accessor: "totalProfitLoss",
           },
           {
+            Header: "Total Brokerage P/L",
+            accessor: "totalProfitLossBrokerage",
+          },
+
+          {
             Header: "# of Trades",
             accessor: "totalNumTrades",
           },
