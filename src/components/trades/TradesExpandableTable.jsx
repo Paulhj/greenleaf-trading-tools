@@ -51,17 +51,6 @@ const TradesExpandableTable = ({
               <React.Fragment {...row.getRowProps()}>
                 <tr>
                   {row.cells.map((cell) => {
-                    if (cell.column.Header === "PA-Details") {
-                      const s1 = row.cells[1].value;
-                      const s2 = row.cells[2].value;
-                      const url = `/pairanalysisreport/${s1}/${s2}`;
-                      return (
-                        <td {...cell.getCellProps()}>
-                          <Link to={url}>Pair Analysis</Link>
-                        </td>
-                      );
-                    }
-
                     if (
                       cell.column.Header === "Status" &&
                       (cell.value === "ACTIVE_SL" || cell.value === "ACTIVE_LS")
@@ -128,6 +117,54 @@ const TradesExpandableTable = ({
                     if (cell.column.Header === "Total" && cell.value < 0) {
                       return (
                         <td bgcolor="#dd7788" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (cell.column.backgroundGroupId === "PTO") {
+                      return (
+                        <td bgcolor="#FF9966" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (cell.column.backgroundGroupId === "PTC") {
+                      return (
+                        <td bgcolor="#FFFDD0" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (cell.column.backgroundGroupId === "PLH") {
+                      return (
+                        <td bgcolor="#708090" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (cell.column.backgroundGroupId === "PLA") {
+                      return (
+                        <td bgcolor="#828382" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (cell.column.backgroundGroupId === "TS1") {
+                      return (
+                        <td bgcolor="#708090" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (cell.column.backgroundGroupId === "TS2") {
+                      return (
+                        <td bgcolor="#B1B687" {...cell.getCellProps()}>
                           {cell.render("Cell")}
                         </td>
                       );

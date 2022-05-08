@@ -42,14 +42,17 @@ const TradesTable = ({ data, analysisInputs }) => {
             columns: [
               {
                 Header: "Sym",
+                backgroundGroupId: "TS1",
                 accessor: "s1",
               },
               {
                 Header: "#",
+                backgroundGroupId: "TS1",
                 accessor: "s1Shares",
               },
               {
                 Header: "Type",
+                backgroundGroupId: "TS1",
                 accessor: "s1OrderType",
               },
             ],
@@ -59,14 +62,17 @@ const TradesTable = ({ data, analysisInputs }) => {
             columns: [
               {
                 Header: "Sym",
+                backgroundGroupId: "TS2",
                 accessor: "s2",
               },
               {
                 Header: "#",
                 accessor: "s2Shares",
+                backgroundGroupId: "TS2",
               },
               {
                 Header: "Type",
+                backgroundGroupId: "TS2",
                 accessor: "s2OrderType",
               },
             ],
@@ -79,13 +85,16 @@ const TradesTable = ({ data, analysisInputs }) => {
         columns: [
           {
             Header: "Details",
+            backgroundGroupId: "PTO",
             columns: [
               {
                 Header: "Time",
+                backgroundGroupId: "PTO",
                 accessor: "openDate",
               },
               {
                 Header: "S. Dev",
+                backgroundGroupId: "PTO",
                 accessor: "openStdDev",
               },
             ],
@@ -95,10 +104,12 @@ const TradesTable = ({ data, analysisInputs }) => {
             columns: [
               {
                 Header: "Homer",
+                backgroundGroupId: "PTO",
                 accessor: "openS1Price",
               },
               {
                 Header: "Alpaca",
+                backgroundGroupId: "PTO",
                 accessor: "openS1BrokeragePrice",
               },
             ],
@@ -108,10 +119,12 @@ const TradesTable = ({ data, analysisInputs }) => {
             columns: [
               {
                 Header: "Homer",
+                backgroundGroupId: "PTO",
                 accessor: "openS2Price",
               },
               {
                 Header: "Alpaca",
+                backgroundGroupId: "PTO",
                 accessor: "openS2BrokeragePrice",
               },
             ],
@@ -127,10 +140,12 @@ const TradesTable = ({ data, analysisInputs }) => {
             columns: [
               {
                 Header: "Time",
+                backgroundGroupId: "PTC",
                 accessor: "closeDate",
               },
               {
                 Header: "S. Dev",
+                backgroundGroupId: "PTC",
                 accessor: "closeStdDev",
               },
             ],
@@ -140,10 +155,12 @@ const TradesTable = ({ data, analysisInputs }) => {
             columns: [
               {
                 Header: "Homer",
+                backgroundGroupId: "PTC",
                 accessor: "closeS1Price",
               },
               {
                 Header: "Alpaca",
+                backgroundGroupId: "PTC",
                 accessor: "closeS1BrokeragePrice",
               },
             ],
@@ -153,10 +170,12 @@ const TradesTable = ({ data, analysisInputs }) => {
             columns: [
               {
                 Header: "Homer",
+                backgroundGroupId: "PTC",
                 accessor: "closeS2Price",
               },
               {
                 Header: "Alpaca",
+                backgroundGroupId: "PTC",
                 accessor: "closeS2BrokeragePrice",
               },
             ],
@@ -172,18 +191,22 @@ const TradesTable = ({ data, analysisInputs }) => {
             columns: [
               {
                 Header: "S1 Leg",
+                backgroundGroupId: "PLH",
                 accessor: "profitLossT1",
               },
               {
                 Header: "S2 Leg",
+                backgroundGroupId: "PLH",
                 accessor: "profitLossT2",
               },
               {
                 Header: "Total",
+                backgroundGroupId: "PLH",
                 accessor: "profitLoss",
               },
               {
                 Header: "Slippage",
+                backgroundGroupId: "PLH",
                 accessor: "profitLossSlippage",
               },
             ],
@@ -193,15 +216,22 @@ const TradesTable = ({ data, analysisInputs }) => {
             columns: [
               {
                 Header: "S1 Leg",
+                backgroundGroupId: "PLA",
                 accessor: "brokerageProfitLossT1",
               },
               {
                 Header: "S2 Leg",
+                backgroundGroupId: "PLA",
                 accessor: "brokerageProfitLossT2",
               },
               {
                 Header: "Total",
                 accessor: "profitLossBrokerage",
+              },
+              {
+                Header: "Slippage",
+                backgroundGroupId: "PLA",
+                accessor: "profitLossBrokerageSlippage",
               },
             ],
           },
