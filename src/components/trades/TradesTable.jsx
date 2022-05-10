@@ -204,11 +204,6 @@ const TradesTable = ({ data, analysisInputs }) => {
                 backgroundGroupId: "PLH",
                 accessor: "profitLoss",
               },
-              {
-                Header: "Slippage",
-                backgroundGroupId: "PLH",
-                accessor: "profitLossSlippage",
-              },
             ],
           },
           {

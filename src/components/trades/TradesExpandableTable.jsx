@@ -121,6 +121,22 @@ const TradesExpandableTable = ({
                       );
                     }
 
+                    if (cell.column.Header === "Slippage" && cell.value >= 0) {
+                      return (
+                        <td bgcolor="#7a9460" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
+                    if (cell.column.Header === "Slippage" && cell.value < 0) {
+                      return (
+                        <td bgcolor="#dd7788" {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      );
+                    }
+
                     if (cell.column.backgroundGroupId === "PTO") {
                       return (
                         <td bgcolor="#FF9966" {...cell.getCellProps()}>
